@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Bill</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        @media print{
+            body{
+                visibility:hidden;
+
+            }
+            #displaydata{
+                visibility: visible;    
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-1">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Calculate Bill</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <label for="item">Product Name</label>
+                                <select name="itemname" id="itemname"></select>
+                            </div>
+                            <div class="col-md-5">
+                                <label for="qty">Quantity</label>
+                                <select class="form-control"
+                                name="qty" id="qty"></select>
+                            </div>
+                            <div class="col-md-2">
+                                <button onclick="addItem()"
+                                class="btn btn-primary mt-4">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <table class = "table table-bordered tale-striped table-hover" id="displaydata">
+                        <thead>
+                            <tr>
+                                <th>Product name</th>
+                                <th>Product prize</th>
+                                <th>Quantity</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tfoot>
+                                <tr>
+                                    <Th>Total<th>
+                                    <th id="total"></Th>
+                                </tr>
+                            </tfoot>
+
+                        </tbody>
+                    </table>
+                    <button onclick="window.print()" class = "btn btn-primary">Generate PDF</button>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
